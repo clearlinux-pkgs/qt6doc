@@ -7,12 +7,12 @@
 #
 Name     : qt6doc
 Version  : 6.8.2
-Release  : 22
+Release  : 23
 URL      : https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtdoc-everywhere-src-6.8.2.tar.xz
 Source0  : https://download.qt.io/official_releases/qt/6.8/6.8.2/submodules/qtdoc-everywhere-src-6.8.2.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : Apache-2.0 BSD-3-Clause CC-BY-SA-4.0 GFDL-1.3 GPL-3.0
+License  : Apache-2.0 BSD-3-Clause CC-BY-SA-4.0 GFDL-1.3 GPL-3.0 MIT
 Requires: qt6doc-lib = %{version}-%{release}
 Requires: qt6doc-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
@@ -71,7 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1738695152
+export SOURCE_DATE_EPOCH=1738725012
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -134,7 +134,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1738695152
+export SOURCE_DATE_EPOCH=1738725012
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qt6doc
 cp %{_builddir}/qtdoc-everywhere-src-%{version}/LICENSES/Apache-2.0.txt %{buildroot}/usr/share/package-licenses/qt6doc/9e132ef44ef2f5e72f4e3681765591005694515e || :
@@ -142,6 +142,7 @@ cp %{_builddir}/qtdoc-everywhere-src-%{version}/LICENSES/BSD-3-Clause.txt %{buil
 cp %{_builddir}/qtdoc-everywhere-src-%{version}/LICENSES/CC-BY-SA-4.0.txt %{buildroot}/usr/share/package-licenses/qt6doc/f26cccd93362d640ef2c05d1c52b5efe1620a9b2 || :
 cp %{_builddir}/qtdoc-everywhere-src-%{version}/LICENSES/GFDL-1.3-no-invariants-only.txt %{buildroot}/usr/share/package-licenses/qt6doc/715f995f11805ee85601834220c43b082f457ea3 || :
 cp %{_builddir}/qtdoc-everywhere-src-%{version}/LICENSES/GPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/qt6doc/8624bcdae55baeef00cd11d5dfcfa60f68710a02 || :
+cp %{_builddir}/qtdoc-everywhere-src-%{version}/doc/src/legal/licenses.qdoc %{buildroot}/usr/share/package-licenses/qt6doc/0ca06fe2f7efe4bb63167c55c5ca284e0dd42494 || :
 export GOAMD64=v2
 pushd ../buildavx2/
 GOAMD64=v3
@@ -168,6 +169,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
+/usr/share/package-licenses/qt6doc/0ca06fe2f7efe4bb63167c55c5ca284e0dd42494
 /usr/share/package-licenses/qt6doc/715f995f11805ee85601834220c43b082f457ea3
 /usr/share/package-licenses/qt6doc/8624bcdae55baeef00cd11d5dfcfa60f68710a02
 /usr/share/package-licenses/qt6doc/9e132ef44ef2f5e72f4e3681765591005694515e
